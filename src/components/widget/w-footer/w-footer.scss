@@ -1,0 +1,52 @@
+@charset "UTF-8";
+@import '../../../scss/_mixin';
+$psdWidth: 640;
+$downLoadBgColor:#ffdd00;
+$downLoadFontColor:#333333;
+
+footer{
+    position:relative;
+    margin-right:rem(16);
+    margin-left:rem(16);
+    margin-top:rem(40);
+    .w-footer-tip{
+        font-size:rem(32);
+        text-align:center;
+        color:rgba(153,153,153,0.87);
+        position: relative;
+    }
+    .w-footer-tip:before{
+        content: " ";
+        position: absolute;
+        top: rem(16);
+        left: rem(70);
+        width:rem(50);
+        height: rem(1);
+        background-color:rgba(153,153,153,0.87);
+
+    }
+     .w-footer-tip:after{
+        content: " ";
+        position: absolute;
+        top: rem(16);
+        right: rem(70);
+        width:rem(50);
+        height: rem(1);
+        background-color:rgba(153,153,153,0.87);
+
+    }
+    .w-footer-download{
+        display: block;
+        width:100%;
+        height:rem(80);
+        line-height:rem(80);
+        font-size: rem(32);
+        text-align: center;
+        background-color:$downLoadBgColor;
+        color:$downLoadFontColor;
+        border-radius:rem(4) rem(4);
+        margin-top: rem(32);
+        margin-bottom: rem(53);
+    }
+
+}
