@@ -11,9 +11,26 @@ var
     inlinesource = require('gulp-inline-source'),
     gulpJade = require('gulp-jade');
 
+gulp.task('default', function(){
+    console.log([
+        '',
+        '',
+        '  Ustage:' + ' gulp <command>',
+        '',
+        '',
+        '  Commands:',
+        '    ' + 'watch              init project and watch',
+        '    ' + 'connect            build local server',
+        '    ' + 'webpack            run webpack',
+        '    ' + 'all                init project',
+        
+        ''
+    ].join(''));
+});
+
 gulp.task('connect', function(){
     connect.server({
-        root: './dist',
+            root: './dist',
         livereload: true,
         port: 5000
     });
