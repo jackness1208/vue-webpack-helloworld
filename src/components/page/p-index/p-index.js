@@ -10,6 +10,15 @@ module.exports = Vue.extend({
             recommendItems: []
         };
     },
+    // watch: {
+    //     'recommendItems': {
+    //         handler: function(val, oldVal){
+    //             console.log('data.recommendItems watch!!!', val)
+
+    //         }
+    //     }
+
+    // },
     
     methods: {
 
