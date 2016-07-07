@@ -2,14 +2,17 @@
 var 
     gulp = require('gulp'),
     gutil = require('gulp-util'),
-    // webpack = require('gulp-webpack'),
+    fs = require('fs'),
     webpack = require('webpack'),
-    sass = require('gulp-sass'),
     connect = require('gulp-connect'),
     runSequence = require('run-sequence'),
     webpackConfig = require('./webpack.config.js'),
-    inlinesource = require('gulp-inline-source'),
-    gulpJade = require('gulp-jade');
+    extend = require('extend'),
+    config = require('./config.js');
+
+if(fs.existsSync('./config.mine.js')){
+    config = extend(config, require('./config.mine.js'));
+}
 
 gulp.task('default', function(){
     console.log([
@@ -30,7 +33,7 @@ gulp.task('default', function(){
 
 gulp.task('connect', function(){
     connect.server({
-            root: './dist',
+            root: './build',
         livereload: true,
         port: 5000
     });
@@ -62,36 +65,18 @@ gulp.task('webpack', function(done){
     //     .pipe(gulp.dest('./dist/js'));
 });
 
-gulp.task('jade', function(){
-    return gulp.src('./src/boot/*.jade')
-        .pipe(gulpJade({
-            pretty: true,
-            client: false
-        }))
-        .pipe(inlinesource())
-        .pipe(gulp.dest('./dist/html'));
-});
-gulp.task('sass', function(){
-    return gulp.src('./src/boot/*.scss')
-        .pipe(sass().on('error', sass.logError))
-        .pipe(gulp.dest('./dist/css'));
-});
 
-gulp.task('copy', function(){
-    return gulp.src('./src/js/lib/**/*.*')
-        .pipe(gulp.dest('./dist/js/lib'));
-});
 
-gulp.task('all', ['webpack', 'jade', 'sass', 'copy'], function(){});
+gulp.task('all', ['webpack'], function(){});
 
 gulp.task('watch', ['connect', 'all'], function(){
-    gulp.watch('./src/boot/*.jade', function(){
-        runSequence('jade', 'connect-reload')
-    });
+    // gulp.watch('./src/boot/*.jade', function(){
+    //     runSequence('jade', 'connect-reload');
+    // });
     gulp.watch('./src/boot/*.scss', function(){
-        runSequence('sass', 'connect-reload')
+        runSequence('sass', 'connect-reload');
     });
     gulp.watch(['./src/components/**/*.*'], function(){
-        runSequence('webpack','sass', 'connect-reload')
+        runSequence('webpack','sass', 'connect-reload');
     });
 });

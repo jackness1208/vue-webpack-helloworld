@@ -1,4 +1,5 @@
 'use strict';
+require('./boot.scss');
 var 
     Vue = require('vue'),
     VueRouter = require('vue-router');
