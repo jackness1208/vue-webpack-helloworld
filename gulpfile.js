@@ -6,13 +6,13 @@ var
     webpack = require('webpack'),
     connect = require('gulp-connect'),
     runSequence = require('run-sequence'),
-    webpackConfig = require('./webpack.config.js'),
-    extend = require('extend'),
-    config = require('./config.js');
+    webpackConfig = require('./webpack.config.js');
+    // extend = require('extend'),
+    // config = require('./config.js');
 
-if(fs.existsSync('./config.mine.js')){
-    config = extend(config, require('./config.mine.js'));
-}
+// if(fs.existsSync('./config.mine.js')){
+//     config = extend(config, require('./config.mine.js'));
+// }
 
 gulp.task('default', function(){
     console.log([

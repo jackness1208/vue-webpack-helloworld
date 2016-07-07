@@ -1,17 +1,16 @@
 'use strict';
 var 
-    fs = require('fs'),
     path = require('path'),
     ExtractTextPlugin = require("extract-text-webpack-plugin"),
     HtmlWebpackPlugin = require('html-webpack-plugin'),
     CleanWebpackPlugin = require('clean-webpack-plugin'),
-    ManifestPlugin = require('webpack-manifest-plugin'),
-    extend = require('extend'),
-    config = require('./config.js');
+    ManifestPlugin = require('webpack-manifest-plugin');
+    // extend = require('extend'),
+    // config = require('./config.js');
 
-if(fs.existsSync('./config.mine.js')){
-    config = extend(config, require('./config.mine.js'));
-}
+// if(fs.existsSync('./config.mine.js')){
+    // config = extend(config, require('./config.mine.js'));
+// }
 
 module.exports = {
     devServer:{
