@@ -14,6 +14,16 @@ if(fs.existsSync('./config.mine.js')){
 }
 
 module.exports = {
+    devServer:{
+        host: '127.0.0.1',
+        progress: true,
+        colors: true,
+        contentBase:'build/',
+        port: 5000,
+        // hot: true,
+        // inline: true
+
+    },
     entry: {
         'boot': './src/boot/boot.js',
         'vendors': ['flexlayout','zepto', 'lazyload']
@@ -57,11 +67,11 @@ module.exports = {
     devtool: 'source-map',
     plugins: [
         
-        new CleanWebpackPlugin(['dist', 'build'], {
-            root: __dirname,
-            verbose: true, 
-            dry: false
-        }),
+        // new CleanWebpackPlugin(['dist', 'build'], {
+        //     root: __dirname,
+        //     verbose: true, 
+        //     dry: false
+        // }),
         // 样式分离插件
         new ExtractTextPlugin("../css/boot.css"),
         // html输出插件
