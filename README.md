@@ -1,20 +1,60 @@
-# webpack + vue + gulp demo
+# YY.COM -H5 项目
 
-## init
-this demo is base on gulp & webpack
+## 环境说明
+项目基于 `webpack + vuejs + gulp` 搭建, 需要在 `node >= 4.0.0` 环境下运行
+
+### 全局安装以下组件
+```unix
+$ npm install webpack webpack-dev-server -g
 ```
-$ npm install gulp -g
-$ npm install webpack -g
+
+## 项目初始化
+```unix
 $ npm install
 ```
 
-## command
-```
-$ gulp all         ==> init project
-$ gulp watch       ==> init project and watch and start local server
+## 命令说明
+运行 webpack 打包
+```unix
+$ webpack
 ```
 
-## local server
+运行 webpack 打包并监听
+```unix
+$ webpack -w
+```
 
-after u start the project, visit `http://127.0.0.1:5000` 
+运行 webpack 打包并压缩
+```unix
+$ webpack -p
+```
+
+运行 webpack 打包并建立 本地服务器
+访问地址 `http://127.0.0.1:5000`
+```unix
+$ webpack-dev-server --inline --hot
+```
+
+通过 gulp 执行 webpack 打包
+```unix
+$ gulp all
+```
+
+```unix
+$ gulp webpack
+```
+
+
+通过 gulp 执行 webpack 打包 并建立本地服务器
+```unix
+$ gulp watch
+```
+
+提交代码到 各个 svn
+```unix
+# --sub 提交分支 test|release|trunk
+# --git 是否拉取最新 git 代码
+$ gulp commit --sub <branch> --git
+```
+
 

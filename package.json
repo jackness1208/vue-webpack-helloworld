@@ -1,61 +1,57 @@
 {
-  "name": "vue-webpack-helloworld",
+  "name": "yy.com-h5",
   "version": "1.0.0",
-  "description": "vue with webpack demo",
-  "main": "index.js",
+  "description": "h5 yy.com",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "babel-plugin-transform-runtime": "^6.9.0",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-react": "^6.11.1",
+    "babel-runtime": "^6.9.2",
+    "file-loader": "^0.9.0",
+    "css-loader": "^0.23.1",
+    "gulp-connect": "^4.1.0",
+    "gulp": "^3.9.1",
+    "gulp-util": "^3.0.7",
+    "jade-loader": "^0.8.0",
+    "run-sequence": "^1.2.2",
+    "url-loader": "^0.5.7",
+    "vue": "^1.0.26",
+    "style-loader": "^0.13.1",
+    "vue-hot-reload-api": "^1.3.3",
+    "vue-html-loader": "^1.2.3",
+    "vue-style-loader": "^1.0.0",
+    "sass-loader": "^4.0.0",
+    "vue-loader": "^8.5.3",
+    "vue-lazyload-img": "^0.1.5",
+    "webpack": "^1.13.1",
+    "webpack-dev-server": "^1.14.1",
+    "vue-router": "^0.7.13"
+  },
+  "devDependencies": {
+    "babel-core": "^6.10.4",
+    "babel-loader": "^6.2.4",
+    "clean-webpack-plugin": "^0.1.9",
+    "colors": "^1.1.2",
+    "event-stream": "^3.3.3",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "gulp-clean": "^0.3.2",
+    "gulp-html-beautify": "^1.0.1",
+    "gulp-inline-source": "^2.1.0",
+    "gulp-jade": "^1.1.0",
+    "html-webpack-plugin": "^2.22.0",
+    "node.extend": "^1.1.5",
+    "script-ext-html-webpack-plugin": "^1.3.0",
+    "vuex": "^1.0.0-rc.2",
+    "webpack-manifest-plugin": "^1.0.1"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jackness1208/vue-webpack-helloworld.git"
+    "url": "http://code.yy.com/ent-FEteam/yy.com-h5.git"
   },
-  "keywords": [
-    "vue",
-    "webpack"
-  ],
   "author": "jackness",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/jackness1208/vue-webpack-helloworld/issues"
-  },
-  "homepage": "https://github.com/jackness1208/vue-webpack-helloworld#readme",
-  "devDependencies": {
-    "babel-core": "^6.10.4",
-    "babel-loader": "^6.2.4",
-    "babel-plugin-transform-runtime": "^6.9.0",
-    "babel-preset-es2015": "^6.9.0",
-    "babel-preset-react": "^6.11.1",
-    "babel-runtime": "^6.9.2",
-    "clean-webpack-plugin": "^0.1.9",
-    "css-loader": "^0.23.1",
-    "extend": "^3.0.0",
-    "extract-text-webpack-plugin": "^1.0.1",
-    "file-loader": "^0.9.0",
-    "gulp-connect": "^4.1.0",
-    "gulp-util": "^3.0.7",
-    "html-webpack-plugin": "^2.22.0",
-    "jade": "^1.11.0",
-    "jade-loader": "^0.8.0",
-    "jshint": "^2.9.2",
-    "jshint-loader": "^0.8.3",
-    "run-sequence": "^1.2.2",
-    "sass-loader": "^4.0.0",
-    "style-loader": "^0.13.1",
-    "url-loader": "^0.5.7",
-    "vue": "^1.0.26",
-    "vue-hot-reload-api": "^1.3.3",
-    "vue-html-loader": "^1.2.3",
-    "vue-lazyload-img": "^0.1.5",
-    "vue-loader": "^8.5.3",
-    "vue-router": "^0.7.13",
-    "vue-style-loader": "^1.0.0",
-    "webpack-dev-server": "^1.14.1",
-    "webpack-manifest-plugin": "^1.0.1"
-  },
-  "dependencies": {
-    "gulp": "^3.9.1",
-    "manifest-revision-webpack-plugin": "^0.3.0",
-    "webpack": "^1.13.1"
-  }
+  "license": "ISC"
 }

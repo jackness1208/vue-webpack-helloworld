@@ -1,0 +1,61 @@
+// debug tools
+div.w-devtool(
+    :class="[debugtoolSlide? 'w-devtool-slide':'', debugtoolFullpage? 'w-devtool-fullpage':'', debugtoolFilter? 'w-devtool-filtershow': '']",
+    v-show="debug"
+)
+    // div.w-devtool-slidebar(v-on:click="debugtoolSlideClick")
+    div.w-devtool-tool
+        span(v-on:click="ctrlClick('clear')") clear
+        span(v-on:click="ctrlClick('filter')", :class="[filter? 'w-devtool-current': '']") filter
+        span(v-on:click="ctrlClick('fullpage')", v-show="!debugtoolFullpage") full
+        span(v-on:click="ctrlClick('normalpage')", v-show="debugtoolFullpage") normal
+        span(v-on:click="ctrlClick('latest')", v-show="!debugtoolLatest") latest
+        span(v-on:click="ctrlClick('nolatest')", v-show="debugtoolLatest") no latest
+        span(v-on:click="ctrlClick('totop')") top
+        span(v-on:click="ctrlClick('reload')") reload
+        span(v-link="{ path: '/vtest' }", v-show="!isTest") test page
+        span(v-link="{ path: '/live' }", v-show="isTest") live page
+
+    div.w-devtool-filtermenu
+        span(
+            v-on:click="switchFilter('all')", 
+            :class="[logFilter.all? 'w-devtool-current': '']"
+        ) all
+        span(
+            v-on:click="switchFilter('error')",
+            :class="[logFilter.error? 'w-devtool-current': '']"
+        ) error
+        span(
+            v-on:click="switchFilter('info')",
+            :class="[logFilter.info? 'w-devtool-current': '']"
+        ) info
+        span(
+            v-on:click="switchFilter('warn')",
+            :class="[logFilter.warn? 'w-devtool-current': '']"
+        ) warn
+        span(
+            v-on:click="switchFilter('ajax')",
+            :class="[logFilter.ajax? 'w-devtool-current': '']"
+        ) ajax
+        span(
+            v-on:click="switchFilter('ws')",
+            :class="[logFilter.ws? 'w-devtool-current': '']"
+        ) ws
+        span(
+            v-on:click="switchFilter('stat')",
+            :class="[logFilter.stat? 'w-devtool-current': '']"
+        ) stat
+        span(
+            v-on:click="switchFilter('loop')",
+            :class="[logFilter.loop? 'w-devtool-current': '']"
+        ) loop
+    div.w-devtool-main(v-el:debugtoolmain)
+        p(
+            v-for="(index, item) in logs", 
+            v-show="logFilter[item.type]",
+            :class="['w-devtool-main-type-' + item.type]"
+
+        ) 
+            span.w-devtool-main-time [{{item.time}}]
+            span.w-devtool-main-type [{{item.type}}]
+            span.w-devtool-main-txt {{item.txt}}

@@ -1,11 +1,116 @@
 @charset "utf-8";
-@import "../components/common/normalize/1.0.0/normalize";
+@import "../scss/normalize";
 @import "../scss/_mixin";
+$psdWidth: 750;
 
 * {padding: 0;margin: 0;border: 0;outline: 0}
 html {font-size: 62.5%}
 a {text-decoration: none}
-body {font-size: 12px;-webkit-user-select: none;-webkit-text-size-adjust: none;-webkit-tap-highlight-color:rgba(0,0,0,0);font-family: "Helvetica Neue",Helvetica,STHeiTi,sans-serif}
+body {font-size: 12px;-webkit-user-select: none;-webkit-text-size-adjust: none;-webkit-tap-highlight-color:rgba(0,0,0,0);font-family: Microsoft Yahei, sans-serif}
 a, img {-webkit-touch-callout:none}
 img,video {vertical-align: bottom}
 ul {list-style-type: none}
+
+
+// + loading
+.voice-loading {
+    position: fixed;
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    display: -webkit-box;
+    @include attr2all(box-pack, center);
+    @include attr2all(box-align, center);
+    
+}
+.voice-loading-main {
+    position: relative;
+    z-index: 2;
+    vertical-align: middle;
+    &:before,
+    &:after {
+        content: '';
+        display: inline-block;
+        height: rem(2);
+        overflow: hidden;
+        background: #f26d7d;
+        width: rem(150);
+        margin: 0 rem(2);
+
+    }
+
+    i {
+        display: inline-block;
+        vertical-align: middle;
+        width: rem(8);
+        height: rem(10);
+        margin: 0 rem(2);
+        background: #f26d7d;
+    @include attr2all(animation, voiceAni 5s infinite cubic-bezier(0.18, 0.89, 0.32, 1.28));
+    }
+    .s01 {
+        height: rem(80);
+        @include attr2all(animation-delay, .2s);
+    }
+    .s02 {
+        height: rem(60);
+        @include attr2all(animation-delay, .4s);
+    }
+    .s03 {
+        height: rem(40);
+        @include attr2all(animation-delay, .6s);
+    }
+    .s04 {
+        height: rem(120);
+        @include attr2all(animation-delay, .8s);
+    }
+    .s05 {
+        height: rem(100);
+        @include attr2all(animation-delay, 1s);
+    }
+    .s06 {
+        height: rem(160);
+        @include attr2all(animation-delay, 1.2s);
+    }
+    .s07 {
+        height: rem(130);
+        @include attr2all(animation-delay, 1.4s);
+    }
+    .s08 {
+        height: rem(100);
+        @include attr2all(animation-delay, 1.6s);
+    }
+    .s09 {
+        height: rem(70);
+        @include attr2all(animation-delay, 1.8s);
+    }
+    .s10 {
+        height: rem(40);
+        @include attr2all(animation-delay, 2.0s);
+    }
+    .s11 {
+        height: rem(10);
+        @include attr2all(animation-delay, 2.2s);
+    }
+    .s12 {
+        height: rem(5);
+        @include attr2all(animation-delay, 2.4s);
+    }
+}
+@include keyframes(voiceAni) {
+    0% {
+        @include attr2all(transform, rotateX(90deg));
+    }
+    30% {
+        @include attr2all(transform, rotateX(0deg));
+
+    }
+    60% {
+        @include attr2all(transform, rotateX(0deg));
+    }
+    100% {
+        @include attr2all(transform, rotateX(90deg));
+    }
+}
+// - loading
